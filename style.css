@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/white_wolf.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3a4966;
+    min-height: 8vh;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.brand {
+    color: #e7e5e3;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e7e5e3;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #cc0;
+}
+
+.burger {
+    width: 42px;
+    height: 35px;
+    border: 3px solid #e7e5e3;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #e7e5e3;
+    margin: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width:1100px) {
+    .nav-links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .burger {
+        display: block;
+    }
+    .nav-links {
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        top: 8vh;
+        background-color: #3a4966;
+        flex-direction: column;
+        align-items: center;
+        height: 60vh;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    body {
+        overflow-x: hidden;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.close .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.close .line2 {
+    opacity: 0;
+}
+
+.close .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
